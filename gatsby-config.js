@@ -1,7 +1,16 @@
 module.exports = {
-  plugins: [`gatsby-plugin-typography`],
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    `gatsby-transformer-remark`,
+  ],
   siteMetadata: {
     title: "My Web",
-    author: "Dinesh"
-  }
-}
+    author: "Dinesh",
+  },
+};
