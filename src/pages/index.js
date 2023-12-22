@@ -1,11 +1,14 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Counter from './counter';
+import { graphql } from 'gatsby'
+// import Counter from './counter';
 
-const index = ({data}) => {
+const index = ({data,}) => 
+{
   return (
+    
     <div>
-     <img src='image5.jpg'></img>
+
+      <h5>{data.frontmatter.title}</h5>
     </div>
   );
 }
@@ -13,15 +16,15 @@ const index = ({data}) => {
 export default index
 export const query = graphql`
   query MyFilesQuery {
-    allFile {
-      edges {
-        node {
-          relativePath
-          extension
-          extension
-          birthTime(fromNow: true)
+  allMarkdownRemark {
+    edges {
+      node {
+        frontmatter {
+          title
+          author
         }
       }
     }
+  }
   }
 `;
