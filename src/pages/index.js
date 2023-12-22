@@ -10,6 +10,7 @@ const index = ({data}) => {
       <Link to="/page2">page2</Link>
       <Link to="/dir1/page3">page3</Link>
       <Counter />
+      <p>Hi Guys</p>
     </div>
   );
 }
